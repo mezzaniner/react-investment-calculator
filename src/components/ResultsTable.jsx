@@ -3,7 +3,7 @@ export default function ResultsTable({ headers}) {
         <table id="result">
             <thead>
                 <tr>
-                    {headers.map((header, index) => <th key={`${"header-"}` + index}>{header}</th>)}
+                    {headers.map((header, index) => <th key={header + index}>{header}</th>)}
                 </tr>
             </thead>
             <tbody>
