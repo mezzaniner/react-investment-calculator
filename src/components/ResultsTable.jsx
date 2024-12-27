@@ -1,13 +1,9 @@
-export default function ResultsTable() {
+export default function ResultsTable({ headers}) {
     return (
         <table id="result">
             <thead>
                 <tr>
-                    <th>Year</th>
-                    <th>Investment Value</th>
-                    <th>Interest (Year)</th>
-                    <th>Total Interest</th>
-                    <th>Invested Capital</th>
+                    {headers.map((header, index) => <th key={`${"header-"}` + index}>{header}</th>)}
                 </tr>
             </thead>
             <tbody>
