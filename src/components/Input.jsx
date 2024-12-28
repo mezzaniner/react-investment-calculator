@@ -1,4 +1,4 @@
-export default function Input({ label }) {
+export default function Input({ label, name }) {
     return (
         <div>
             <label>{label}</label>

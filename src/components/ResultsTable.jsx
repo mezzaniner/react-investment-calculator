@@ -1,19 +1,22 @@
-export default function ResultsTable({ headers}) {
+export default function ResultsTable({ headers }) {
+
     return (
         <table id="result">
             <thead>
                 <tr>
-                    {headers.map((header, index) => <th key={header + index}>{header}</th>)}
+                    {headers.map((header, index) => <th key={index}>{header}</th>)}
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>item 1</td>
-                    <td>item 2</td>
-                    <td>item 3</td>
-                    <td>item 4</td>
-                    <td>item 5</td>
-                </tr>
+                {/*{investmentResults && investmentResults.map((result, index) =>*/}
+                {/*    <tr key={index}>*/}
+                {/*        <td>{result.year}</td>*/}
+                {/*        <td>{result.valueEndOfYear}</td>*/}
+                {/*        <td>{result.interest}</td>*/}
+                {/*        <td>{}</td>*/}
+                {/*        <td>{result.annualInvestment}</td>*/}
+                {/*    </tr>*/}
+                {/*)}*/}
             </tbody>
         </table>
     );
