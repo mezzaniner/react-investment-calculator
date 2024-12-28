@@ -1,24 +1,5 @@
-import Input from "./Input.jsx";
-import { useState } from "react";
-
-export default function UserInput() {
+export default function UserInput({ onChangeInput, userInput }) {
     // const { initialInvestment, annualInvestment, expectedReturn, duration } = userInput;
-    const [userInput, setUserInput] = useState({
-        initialInvestment: 10000,
-        annualInvestment: 1200,
-        expectedReturn: 6,
-        duration: 10
-    });
-
-    function handleChange(event) {
-        const { name, value } = event.target;
-        setUserInput((prevState) => {
-            return {
-                ...prevState,
-                [name]: value
-            };
-        });
-    }
 
     return (
         <section id="user-input">
@@ -29,7 +10,7 @@ export default function UserInput() {
                         type="number"
                         name="initialInvestment"
                         value={userInput.initialInvestment}
-                        onChange={handleChange}
+                        onChange={onChangeInput}
                         required/>
                 </p>
                 <p>
@@ -38,7 +19,7 @@ export default function UserInput() {
                         type="number"
                         name="annualInvestment"
                         value={userInput.annualInvestment}
-                        onChange={handleChange}
+                        onChange={onChangeInput}
                         required/>
                 </p>
             </div>
@@ -50,7 +31,7 @@ export default function UserInput() {
                         type="number"
                         name="expectedReturn"
                         value={userInput.expectedReturn}
-                        onChange={handleChange}
+                        onChange={onChangeInput}
                         required/>
                 </p>
                 <p>
@@ -59,7 +40,7 @@ export default function UserInput() {
                         type="number"
                         name="duration"
                         value={userInput.duration}
-                        onChange={handleChange}
+                        onChange={onChangeInput}
                         required/>
                 </p>
             </div>
