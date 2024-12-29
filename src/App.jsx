@@ -14,6 +14,8 @@ function App() {
         duration: 10
     });
 
+    const inputIsValid = userInput.duration >= 1;
+
     function handleChange(event) {
         const { name, value } = event.target;
 
@@ -30,7 +32,8 @@ function App() {
         <>
             <Header/>
             <UserInput onChangeInput={handleChange} userInput={userInput}/>
-            <ResultsTable headers={data.tableHeaders} userInput={userInput}/>
+            {!inputIsValid && <p className="center">Duration must be at least 1 year</p>}
+            {inputIsValid && <ResultsTable headers={data.tableHeaders} userInput={userInput}/>}
         </>
     );
 }
